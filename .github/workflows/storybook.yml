@@ -21,12 +21,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-        run: |
-          npm install
-          npm run build-storybook --if-present
-      - name: commit
-        run: |
-          # update static file
-          git add storybook-static
-          git commit -m "New storybook build"
-          git push origin master
+      - run: npm install
+      - run: npm run build-storybook --if-present
+      # update static file
+      - run: |
+        git add storybook-static
+        git commit -m "New storybook build"
+        git push origin master
