@@ -24,13 +24,6 @@ jobs:
       - run: npm install
       - run: npm run build-storybook --if-present
       # update static file
-<<<<<<< HEAD
       - run: git add storybook-static
       - run: git commit -m "New storybook build"
       - run: git push origin master
-=======
-      - run: |
-        git add storybook-static
-        git commit -m "New storybook build"
-        git push origin master
->>>>>>> 0d17bf31b7ec753ec86635006a2e00838a6c7102
