@@ -1,5 +1,12 @@
 {
-  "name": "storybook.ts",
+  "name": "web-components",
+  "author": {
+    "email": "adedotster@gmai.com",
+    "name": "Ade Adeola",
+    "url": "https://components.adeolaade.com"
+  },
+  "description": "Set of reusable components",
+  "license": "MIT",
   "version": "0.1.0",
   "private": true,
   "scripts": {
