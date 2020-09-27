@@ -2,7 +2,8 @@ import React, { useState } from "react";
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Meta } from "@storybook/react/types-6-0";
 
-import Input, { InputProps } from "../components/Input";
+import Input from "../components/Input";
+import InputProps from "../components/Input/InputProps";
 
 export default {
   title: "Components/Input",
