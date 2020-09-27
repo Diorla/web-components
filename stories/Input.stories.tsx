@@ -29,6 +29,14 @@ Disabled.args = {
   disabled: true,
 };
 
+export const TextArea = (args: InputProps) => <Input {...args} />;
+TextArea.args = {
+  label: "What is your message",
+  value: "",
+  placeholder: "Once upon a time...",
+  multiline: true,
+};
+
 export const Feedback = () => {
   const [email, setEmail] = useState("");
   const regex = RegExp(".+@.+.com");
