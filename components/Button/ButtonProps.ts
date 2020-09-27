@@ -1,4 +1,4 @@
-import BaseButtonProps from "./BAseButtonProps";
+import BaseButtonProps from "./BaseButtonProps";
 
 export default interface ButtonProps extends BaseButtonProps {
   /**

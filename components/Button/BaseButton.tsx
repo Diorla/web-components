@@ -3,7 +3,7 @@ import dimension from "../../theme/dimension";
 import elevation from "../../theme/elevation";
 import palette from "../../theme/palette";
 import typography from "../../theme/typography";
-import BaseButtonProps from "./BAseButtonProps";
+import BaseButtonProps from "./BaseButtonProps";
 
 export default styled.button<BaseButtonProps>`
   font-family: ${typography.fontFamily};
