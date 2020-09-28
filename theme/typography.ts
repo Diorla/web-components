@@ -2,7 +2,6 @@ import { Typography } from "styled-components";
 
 const typography: Typography = {
   fontFamily: [
-    "Segoe UI",
     "-apple-system",
     "Roboto",
     "Helvetica Neue",
@@ -11,7 +10,7 @@ const typography: Typography = {
     "Segoe UI Emoji",
     "Segoe UI Symbol",
     "Apple Color Emoji",
-  ].join(","),
+  ].join(", "),
   fontSize: {
     max: "1.5em",
     large: "1.125em",
