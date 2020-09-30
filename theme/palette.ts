@@ -10,6 +10,7 @@ const info = "#2196f3";
 const success = "#4caf50";
 const warning = "#ff9800";
 const dark = "#333333";
+const cornflowerblue = "#6495ed";
 
 const palette: Palette = {
   primary: {
@@ -50,9 +51,9 @@ const palette: Palette = {
   },
   text: {
     disabled: "",
-    link: "cornflowerblue",
+    link: cornflowerblue,
     active: "",
-    hover: "",
+    hover: shadeColor(cornflowerblue, -0.2),
     selected: "",
     divider: "",
     accent: "",
