@@ -94,6 +94,7 @@ declare module "styled-components" {
     x16: string;
     x32: string;
     x64: string;
+    x128: string;
   }
   /**
    * View ports
@@ -103,6 +104,7 @@ declare module "styled-components" {
     sm: string;
     md: string;
     lg: string;
+    xl: string;
   }
   /**
    * Box-shadows
