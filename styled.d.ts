@@ -1,3 +1,4 @@
+import { React } from "react";
 import "styled-components";
 
 declare module "styled-components" {
@@ -126,5 +127,14 @@ declare module "styled-components" {
     medium: number;
     high: number;
     max: number;
+  }
+
+  //auth/social/brands
+  export interface Brands {
+    [...props: string]: {
+      color: string; // brand colour
+      contrast: string; // white or black, to contrast the brand colour
+      icon: React.ReactNode;
+    };
   }
 }
