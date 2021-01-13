@@ -1,4 +1,4 @@
-import { darken, lighten } from "../utils/color-functions";
+import { darken, lighten } from "./utils/color-functions";
 import { StoryxTheme } from "styled-components";
 
 const breakpoints = {
@@ -10,7 +10,7 @@ const breakpoints = {
 };
 const font = {
   family:
-    "'Segoe UI' Roboto 'Helvetica Neue' Arial 'Apple Color Emoji' 'Segoe UI Emoji' 'Segoe UI Symbol'",
+    "'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
 };
 const primary = {
   //reddish
@@ -64,44 +64,44 @@ const zIndex = {
   snackbar: 1400,
   tooltip: 1500,
 };
-const myTheme = (isDarkMode?: boolean) => {
-  const darkTheme: StoryxTheme = {
-    shade: {
-      close: darken("#343434"),
-      medium: "#343434",
-      distant: lighten("#343434"),
-    },
-    breakpoints,
-    font,
-    primary,
-    secondary,
-    tertiary,
-    error,
-    warning,
-    info,
-    success,
-    duration,
-    zIndex,
-  };
-  const lightTheme: StoryxTheme = {
-    shade: {
-      close: lighten("#cbcbcb"),
-      medium: "#cbcbcb",
-      distant: darken("#cbcbcb"),
-    },
-    breakpoints,
-    font,
-    primary,
-    secondary,
-    tertiary,
-    error,
-    warning,
-    info,
-    success,
-    duration,
-    zIndex,
-  };
-  return isDarkMode ? darkTheme : lightTheme;
+export const darkTheme: StoryxTheme = {
+  shade: {
+    close: darken("#343434"),
+    medium: "#343434",
+    distant: lighten("#343434"),
+  },
+  breakpoints,
+  font,
+  primary,
+  secondary,
+  tertiary,
+  error,
+  warning,
+  info,
+  success,
+  duration,
+  zIndex,
 };
 
-export default myTheme;
+export const lightTheme: StoryxTheme = {
+  shade: {
+    close: lighten("#cbcbcb"),
+    medium: "#cbcbcb",
+    distant: darken("#cbcbcb"),
+  },
+  breakpoints,
+  font,
+  primary,
+  secondary,
+  tertiary,
+  error,
+  warning,
+  info,
+  success,
+  duration,
+  zIndex,
+};
+const storyxTheme = (isDarkMode?: boolean) =>
+  isDarkMode ? darkTheme : lightTheme;
+
+export default storyxTheme;
