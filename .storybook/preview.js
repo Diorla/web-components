@@ -1,7 +1,7 @@
 //@ts-check
 import { ThemeProvider } from "styled-components";
 import React from "react";
-import storyxTheme from "../storyxTheme";
+import storyxTheme from "../storyx-theme";
 import Wrapper from "../storyx/Wrapper";
 
 export const parameters = {
@@ -19,6 +19,7 @@ export const parameters = {
 
 const withThemeProvider = (Story, context) => {
   const theme = storyxTheme(Math.random() >= 0.5);
+  console.log({ shade: theme.shade });
   return (
     <ThemeProvider theme={theme}>
       <Wrapper>
