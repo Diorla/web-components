@@ -66,5 +66,6 @@ declare module "styled-components" {
       snackbar: number;
       tooltip: number;
     };
+    common: string;
   }
 }
