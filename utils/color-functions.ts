@@ -3,18 +3,24 @@ import Color from "color";
 /**
  * Returns a darker shade of the color
  * @param color the colour that will be transformed
+ * @param degree how much you want to change the shade from 0 to 1.
  * @returns color in hex mode
  * @example darken("#ade01a") //"#8AB315"
+ * @example darken("#ade01a", 0.2) //"#8AB315"
  */
-export const darken = (color: string) => new Color(color).darken(0.2).hex();
+export const darken = (color: string, degree = 0.2) =>
+  new Color(color).darken(degree).hex();
 
 /**
  * Returns a lighter shade of the color
  * @param color the colour that will be transformed
+ * @param degree how much you want to change the shade from 0 to 1.
  * @returns color in hex mode
- * @example darken("#ade01a") //"#8AB315"
+ * @example lighten("#ade01a") //"#BEE943"
+ * @example lighten("#ade01a", 0.2) //"#BEE943"
  */
-export const lighten = (color: string) => new Color(color).lighten(0.2).hex();
+export const lighten = (color: string, degree = 0.2) =>
+  new Color(color).lighten(degree).hex();
 
 /**
  * Returns white or black, in order to provide contrast for the colour.
