@@ -64,13 +64,14 @@ const zIndex = {
   snackbar: 1400,
   tooltip: 1500,
 };
+// 9
 export const darkTheme: StoryxTheme = {
   shade: {
-    close: darken("#343434"),
-    medium: "#343434",
-    distant: lighten("#343434"),
+    close: lighten("#999"),
+    medium: lighten("#999", 0.3),
+    distant: lighten("#999", 0.5),
   },
-  common: "#000000",
+  common: "#333333",
   breakpoints,
   font,
   primary,
@@ -86,9 +87,9 @@ export const darkTheme: StoryxTheme = {
 
 export const lightTheme: StoryxTheme = {
   shade: {
-    close: lighten("#cbcbcb"),
-    medium: "#cbcbcb",
-    distant: darken("#cbcbcb"),
+    close: darken("#999"),
+    medium: darken("#999", 0.3),
+    distant: darken("#999", 0.5),
   },
   common: "#ffffff",
   breakpoints,
