@@ -19,7 +19,6 @@ export const parameters = {
 
 const withThemeProvider = (Story, context) => {
   const theme = storyxTheme(Math.random() >= 0.5);
-  console.log({ shade: theme.shade });
   return (
     <ThemeProvider theme={theme}>
       <Wrapper>
