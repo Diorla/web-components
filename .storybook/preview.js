@@ -19,7 +19,7 @@ export const parameters = {
 };
 
 const withThemeProvider = (Story, context) => {
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
   const theme = storyxTheme(isDark);
   return (
     <ThemeProvider theme={theme}>
