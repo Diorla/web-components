@@ -13,6 +13,7 @@ const StyledWrapper = styled.div`
   background-color: ${({ theme }) => theme.common};
   color: ${({ theme }) => contrastColor(theme.common)};
   font-size: 10px;
+  min-height: 200px;
 `;
 
 export default ({ children }) => (
