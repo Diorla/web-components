@@ -1,6 +1,5 @@
 import React from "react";
 import styled, { createGlobalStyle } from "styled-components";
-import { contrastColor } from "../utils/color-functions";
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -10,8 +9,8 @@ const GlobalStyle = createGlobalStyle`
 
 const StyledWrapper = styled.div`
   font-family: ${({ theme }) => theme.font.family};
-  background-color: ${({ theme }) => theme.common};
-  color: ${({ theme }) => contrastColor(theme.common)};
+  background-color: ${({ theme }) => theme.common.color};
+  color: ${({ theme }) => theme.common.inverseColor};
   font-size: 10px;
   min-height: 200px;
 `;

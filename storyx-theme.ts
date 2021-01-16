@@ -71,7 +71,10 @@ export const darkTheme: StoryxTheme = {
     medium: lighten("#999", 0.3),
     distant: lighten("#999", 0.5),
   },
-  common: "#333333",
+  common: {
+    color: "#333333",
+    inverseColor: "#ffffff",
+  },
   breakpoints,
   font,
   primary,
@@ -91,7 +94,10 @@ export const lightTheme: StoryxTheme = {
     medium: darken("#999", 0.3),
     distant: darken("#999", 0.5),
   },
-  common: "#ffffff",
+  common: {
+    color: "#ffffff",
+    inverseColor: "#000000",
+  },
   breakpoints,
   font,
   primary,
