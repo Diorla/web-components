@@ -24,6 +24,7 @@ const StyledButton = styled.button<{
   variant: variants;
   size: sizes;
   outlined: boolean;
+  block: boolean;
 }>`
   background: ${({ theme, variant, outlined }) =>
     outlined ? theme.common.color : theme[variant].color};
@@ -37,14 +38,10 @@ const StyledButton = styled.button<{
   transition: ${({ theme }) => theme.duration.standard} linear;
   cursor: pointer;
   border: 2px solid ${({ theme, variant }) => theme[variant].color};
+  width: ${({ block }) => (block ? "100%" : "initial")};
   &:hover {
     box-shadow: 0 0.4rem 0.8rem silver;
   }
-`;
-
-const StyledBlock = styled(StyledButton)`
-  border-radius: 0.4rem;
-  width: 100%;
 `;
 
 export interface ButtonProps {
@@ -63,15 +60,16 @@ const Button = ({
   outlined = false,
   block = false,
   ...props
-}: ButtonProps) =>
-  block ? (
-    <StyledBlock variant={variant} size={size} {...props} outlined={outlined}>
-      {children}
-    </StyledBlock>
-  ) : (
-    <StyledButton variant={variant} size={size} {...props} outlined={outlined}>
-      {children}
-    </StyledButton>
-  );
+}: ButtonProps) => (
+  <StyledButton
+    variant={variant}
+    size={size}
+    {...props}
+    outlined={outlined}
+    block={block}
+  >
+    {children}
+  </StyledButton>
+);
 
 export default Button;
