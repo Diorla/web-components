@@ -1,15 +1,8 @@
 import styled from "styled-components";
 import React from "react";
 import { contrastColor } from "../utils/color-functions";
+import variants from "./variants";
 
-type variants =
-  | "primary"
-  | "secondary"
-  | "tertiary"
-  | "success"
-  | "error"
-  | "info"
-  | "warning";
 type sizes = "smallest" | "small" | "medium" | "large" | "largest";
 
 const fontSize = {
