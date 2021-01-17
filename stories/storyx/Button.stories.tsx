@@ -86,3 +86,9 @@ Outlined.args = {
   children: "Outlined",
   outlined: true,
 };
+
+export const BlockButton = Template.bind({});
+BlockButton.args = {
+  children: "Block button",
+  block: true,
+};
