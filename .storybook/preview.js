@@ -19,22 +19,19 @@ export const parameters = {
 };
 
 const withThemeProvider = (Story, context) => {
-  const [isDark, setIsDark] = useState(false);
+  const {
+    hooks: {
+      currentContext: {
+        globals: { backgrounds },
+      },
+    },
+  } = context;
+  
+  const isDark = backgrounds && backgrounds.value === "#333333";
   const theme = storyxTheme(isDark);
   return (
     <ThemeProvider theme={theme}>
       <Wrapper>
-        <button
-          onClick={() => setIsDark(!isDark)}
-          style={{
-            border: "none",
-            padding: 4,
-            outline: "none",
-            float: "right",
-          }}
-        >
-          {isDark ? <FaSun /> : <FaMoon />}
-        </button>
         <Story {...context} />
       </Wrapper>
     </ThemeProvider>
