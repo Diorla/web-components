@@ -38,12 +38,7 @@ const StyledButton = styled.button<{
   cursor: pointer;
   border: 2px solid ${({ theme, variant }) => theme[variant].color};
   &:hover {
-    background: ${({ theme, variant, outlined }) =>
-      outlined ? theme[variant].color : theme[variant].light};
-    color: ${({ theme, variant }) => contrastColor(theme[variant].light)};
-    border: 2px solid
-      ${({ theme, variant, outlined }) =>
-        outlined ? theme[variant].color : theme[variant].light};
+    box-shadow: 0 4px 8px silver;
   }
 `;
 
