@@ -19,6 +19,7 @@ const Link = styled.a<LinkProps>`
   color: ${({ theme, variant = "primary" }) => theme[variant].color};
   font-weight: ${({ heavy }) => (heavy ? "bold" : "initial")};
   font-size: ${({ size }) => (size ? fontSize[size] : fontSize.medium)};
+  text-decoration: none;
   &:hover {
     color: ${({ theme, variant = "primary" }) => theme[variant].dark};
   }
