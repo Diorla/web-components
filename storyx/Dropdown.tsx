@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { FaCaretDown, FaCaretUp } from "react-icons/fa";
+import { useClickAway } from "react-use";
 
 const slideDown = keyframes`
   from {
@@ -69,6 +70,10 @@ const DropdownIcon = ({ expanded }: { expanded: boolean }) =>
 const Dropdown = ({ main, children, left = "", right = "" }: DropdownProps) => {
   const [loaded, setLoaded] = useState(false);
   const [expanded, setExpanded] = useState(false);
+  const ref = useRef<null | HTMLDivElement>(null);
+  useClickAway(ref, () => {
+    setExpanded(false);
+  });
   return (
     <StyledDropDown right={right} left={left}>
       <DropdownMain
@@ -86,6 +91,7 @@ const Dropdown = ({ main, children, left = "", right = "" }: DropdownProps) => {
           onClick={() => {
             setExpanded(!expanded);
           }}
+          ref={ref}
         >
           {children}
         </DropdownList>
