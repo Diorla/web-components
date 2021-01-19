@@ -49,6 +49,7 @@ const DropdownList = styled.div<{ expanded: boolean }>`
   font-weight: initial;
   min-width: 20rem;
   transform-origin: top;
+  background: ${({ theme }) => theme.common.color};
   & > *:hover {
     text-decoration: underline;
     cursor: pointer;
