@@ -2,7 +2,6 @@ import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 
 import Modal, { ModalProps } from "../../storyx/Modal";
-import profile from "../assets/profile.jpg";
 
 export default {
   title: "Storyx/Modal",
