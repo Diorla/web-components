@@ -16,7 +16,7 @@ const StyledButton = styled.button`
   outline: none;
   font-size: 1.6rem;
   cursor: pointer;
-  border: 2px solid;
+  border: 0.2rem solid;
   background: ${({ theme }) => theme.common.color};
   font-weight: bold;
   transition: ${({ theme }) => theme.duration.longest} linear;
