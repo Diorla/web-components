@@ -7,11 +7,11 @@ export interface ModalProps {
 }
 const Box = styled.div<ModalProps>`
   background-color: ${({ theme }) => theme.common.color}f2;
-  min-height: 320px;
+  min-height: 32rem;
   width: 80%;
-  min-width: 320px;
-  max-width: 640px;
-  border-top: 4px solid ${({ theme, variant }) => theme[variant].color};
+  min-width: 32rem;
+  max-width: 64rem;
+  border-top: 0.4rem solid ${({ theme, variant }) => theme[variant].color};
   display: flex;
   justify-content: space-around;
 `;

@@ -5,8 +5,8 @@ import { useRef } from "react";
 const StyledDiv = styled.div`
   border: 0.1rem solid silver;
   width: 80%;
-  min-width: 240px;
-  border-radius: 48px;
+  min-width: 24rem;
+  border-radius: 4.8rem;
   display: flex;
   align-items: center;
   margin: auto;

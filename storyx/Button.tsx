@@ -30,7 +30,7 @@ const StyledButton = styled.button<{
   outline: none;
   transition: ${({ theme }) => theme.duration.standard} linear;
   cursor: pointer;
-  border: 2px solid ${({ theme, variant }) => theme[variant].color};
+  border: 0.2rem solid ${({ theme, variant }) => theme[variant].color};
   width: ${({ block }) => (block ? "100%" : "initial")};
   &:hover {
     box-shadow: 0 0.4rem 0.8rem silver;
