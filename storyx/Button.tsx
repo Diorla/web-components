@@ -35,6 +35,9 @@ const StyledButton = styled.button<{
   &:hover {
     box-shadow: 0 0.4rem 0.8rem silver;
   }
+  &:active {
+    box-shadow: 0 0.4rem 0.2rem silver;
+  }
 `;
 
 export interface ButtonProps {
