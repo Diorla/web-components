@@ -31,14 +31,14 @@ const StyledPanelButton = styled.button<{
   outline: none;
   transition: ${({ theme }) => theme.duration.standard} linear;
   cursor: pointer;
-  border: 1px solid
+  border: 0.1rem solid
     ${({ theme, variant }) =>
       variant === "error"
         ? lighten(theme[variant].color, 0.6)
         : lighten(theme[variant].color, 0.8)};
   font-size: ${({ size }) => fontSize[size]};
   &:hover {
-    border: 1px solid
+    border: 0.1rem solid
       ${({ theme, variant }) => lighten(theme[variant].color, 0.3)};
   }
   &:active {
