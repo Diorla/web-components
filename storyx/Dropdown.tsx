@@ -81,6 +81,7 @@ const Dropdown = ({ main, children, left = "", right = "" }: DropdownProps) => {
           setExpanded(!expanded);
           setLoaded(true);
         }}
+        ref={ref}
       >
         {main}
         <DropdownIcon expanded={expanded} />
@@ -91,7 +92,6 @@ const Dropdown = ({ main, children, left = "", right = "" }: DropdownProps) => {
           onClick={() => {
             setExpanded(!expanded);
           }}
-          ref={ref}
         >
           {children}
         </DropdownList>
