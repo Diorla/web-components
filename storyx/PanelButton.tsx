@@ -17,14 +17,30 @@ const StyledPanelButton = styled.button<{
   variant: variants;
   size: sizes;
 }>`
-  background: ${({ theme, variant }) => lighten(theme[variant].color, 0.7)};
+  background: ${({ theme, variant }) =>
+    variant === "error"
+      ? lighten(theme[variant].color, 0.6)
+      : lighten(theme[variant].color, 0.8)};
   font-size: ${({ size }) => fontSize[size]};
   border: none;
-  color: ${({ theme, variant }) => darken(theme[variant].color, 0.8)};
+  color: ${({ theme, variant }) =>
+    variant === "error"
+      ? darken(theme[variant].color, 0.8)
+      : darken(theme[variant].color, 0.6)};
   padding: 0.6rem 1.2rem;
   outline: none;
   transition: ${({ theme }) => theme.duration.standard} linear;
   cursor: pointer;
+  border: 1px solid
+    ${({ theme, variant }) =>
+      variant === "error"
+        ? lighten(theme[variant].color, 0.6)
+        : lighten(theme[variant].color, 0.8)};
+  font-size: ${({ size }) => fontSize[size]};
+  &:hover {
+    border: 1px solid
+      ${({ theme, variant }) => lighten(theme[variant].color, 0.3)};
+  }
   &:active {
     background: ${({ theme, variant }) => theme[variant].color};
   }
