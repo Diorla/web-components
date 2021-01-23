@@ -17,6 +17,7 @@ const Wrapper = styled.div`
   padding: 0.6rem;
   font-size: 1.4rem;
   color: ${({ theme }) => theme.primary.color};
+  background: ${({ theme }) => theme.common.color};
 `;
 
 const Center = styled.div`
