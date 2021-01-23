@@ -3,7 +3,6 @@ import { ThemeProvider } from "styled-components";
 import React, { useState } from "react";
 import storyxTheme from "../storyx-theme";
 import Wrapper from "../storyx/Wrapper";
-import { FaMoon, FaSun } from "react-icons/fa";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
