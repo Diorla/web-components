@@ -1,5 +1,3 @@
-Sidebar
-Comment 
 Profile image(rounded, not)
 Profile Heading
 Profile Info (active/not)
