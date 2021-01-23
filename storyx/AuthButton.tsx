@@ -41,20 +41,20 @@ const StyledFacebook = styled(StyledButton)`
   }
 `;
 
-const GoogleButton = ({ props }: { [props: string]: any }) => (
+const GoogleButton = ({ ...props }: { [props: string]: any }) => (
   <StyledGoogle {...props}>
     <FaGoogle />
     Google
   </StyledGoogle>
 );
-const FacebookButton = ({ props }: { [props: string]: any }) => (
+const FacebookButton = ({ ...props }: { [props: string]: any }) => (
   <StyledFacebook {...props}>
     <FaFacebookSquare />
     Facebook
   </StyledFacebook>
 );
 
-const AuthButton = ({ type, props }: AuthButtonProps) => {
+const AuthButton = ({ type, ...props }: AuthButtonProps) => {
   if (type === "google") return <GoogleButton {...props} />;
   return <FacebookButton {...props} />;
 };

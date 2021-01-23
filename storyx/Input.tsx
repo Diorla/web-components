@@ -4,8 +4,6 @@ import variants from "./variants";
 export interface InputProps {
   variant: variants;
   label: string;
-  placeholder: string;
-  type: string;
   [props: string]: any;
 }
 
@@ -39,18 +37,12 @@ const Wrapper = styled.div`
   flex-direction: column;
 `;
 
-const Input = ({ label, variant, placeholder, type, props }: InputProps) => {
+const Input = ({ label, variant, ...props }: InputProps) => {
   const randomId = "s" + Math.floor(1000000000 * Math.random());
   return (
     <Wrapper>
       <StyledLabel htmlFor={randomId}>{label}</StyledLabel>
-      <StyledInput
-        variant={variant}
-        id={randomId}
-        placeholder={placeholder}
-        type={type}
-        {...props}
-      />
+      <StyledInput variant={variant} id={randomId} {...props} />
     </Wrapper>
   );
 };

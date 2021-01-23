@@ -35,7 +35,7 @@ const StyledIcon = styled(FaSearch)`
 export interface SearchProps {
   [props: string]: any;
 }
-const Search = ({ props }: SearchProps) => {
+const Search = ({ ...props }: SearchProps) => {
   const ref = useRef<null | HTMLInputElement>(null);
   return (
     <StyledDiv>

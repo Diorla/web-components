@@ -17,7 +17,7 @@ export interface TextProps {
   variant?: variants;
   important?: boolean;
   children: React.ReactNode;
-  [key: string]: any;
+  [props: string]: any;
 }
 
 const header = styled.h1`
@@ -70,7 +70,12 @@ export const StyledText = styled.div<{ important: boolean }>`
   font-weight: ${({ important }) => (important ? 600 : "initial")};
 `;
 
-const Text: React.FC<TextProps> = ({ variant, children, important, props }) => {
+const Text: React.FC<TextProps> = ({
+  variant,
+  children,
+  important,
+  ...props
+}) => {
   if (variant === "h1") return <H1 {...props}>{children}</H1>;
   else if (variant === "h2") return <H2 {...props}>{children}</H2>;
   else if (variant === "h3") return <H3 {...props}>{children}</H3>;
