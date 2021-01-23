@@ -8,6 +8,12 @@ const breakpoints = {
   lg: 1280,
   xl: 1920,
 };
+/**
+ * TODO: Add font-size(font.size)
+ * This will be based on the recurring smallest, small, medium, large and largest
+ * I have been using this already in my code, so I just need to integrate it into theme
+ * I could also add special sizes like h1?
+ */
 const font = {
   family:
     "'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
