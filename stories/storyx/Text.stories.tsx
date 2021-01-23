@@ -74,6 +74,31 @@ export const StyledText = Template.bind({});
 StyledText.args = {
   children: "Default Text",
 };
+export const Smallest = Template.bind({});
+Smallest.args = {
+  children: "smallest",
+  size: "smallest",
+};
+export const Small = Template.bind({});
+Small.args = {
+  children: "small",
+  size: "small",
+};
+export const Medium = Template.bind({});
+Medium.args = {
+  children: "medium",
+  size: "medium",
+};
+export const Large = Template.bind({});
+Large.args = {
+  children: "large",
+  size: "large",
+};
+export const Largest = Template.bind({});
+Largest.args = {
+  children: "largest",
+  size: "largest",
+};
 
 export const Important = Template.bind({});
 Important.args = {

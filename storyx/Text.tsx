@@ -13,10 +13,19 @@ type variants =
   | "secondary"
   | "tertiary";
 
+type sizes = "small" | "smallest" | "medium" | "large" | "largest";
+const fontSize = {
+  smallest: "1.2rem",
+  small: "1.4rem",
+  medium: "1.6rem",
+  large: "1.8rem",
+  largest: "2rem",
+};
 export interface TextProps {
   variant?: variants;
   important?: boolean;
   children: React.ReactNode;
+  size?: sizes;
   [props: string]: any;
 }
 
@@ -46,26 +55,26 @@ export const Subtext = styled.span`
 export const Caption = styled.figcaption`
   font-size: 1.4rem;
 `;
-export const Primary = styled.div<{ important: boolean }>`
-  font-size: 1.6rem;
+export const Primary = styled.div<{ important: boolean; size: sizes }>`
+  font-size: ${({ size = "medium" }) => fontSize[size]};
   color: ${({ theme }) => theme.primary.color};
   text-transform: ${({ important }) => (important ? "uppercase" : "initial")};
   font-weight: ${({ important }) => (important ? 600 : "initial")};
 `;
-export const Secondary = styled.div<{ important: boolean }>`
-  font-size: 1.6rem;
+export const Secondary = styled.div<{ important: boolean; size: sizes }>`
+  font-size: ${({ size = "medium" }) => fontSize[size]};
   color: ${({ theme }) => theme.secondary.color};
   text-transform: ${({ important }) => (important ? "uppercase" : "initial")};
   font-weight: ${({ important }) => (important ? 600 : "initial")};
 `;
-export const Tertiary = styled.div<{ important: boolean }>`
-  font-size: 1.6rem;
+export const Tertiary = styled.div<{ important: boolean; size: sizes }>`
+  font-size: ${({ size = "medium" }) => fontSize[size]};
   color: ${({ theme }) => theme.tertiary.color};
   text-transform: ${({ important }) => (important ? "uppercase" : "initial")};
   font-weight: ${({ important }) => (important ? 600 : "initial")};
 `;
-export const StyledText = styled.div<{ important: boolean }>`
-  font-size: 1.6rem;
+export const StyledText = styled.div<{ important: boolean; size: sizes }>`
+  font-size: ${({ size = "medium" }) => fontSize[size]};
   text-transform: ${({ important }) => (important ? "uppercase" : "initial")};
   font-weight: ${({ important }) => (important ? 600 : "initial")};
 `;
@@ -74,6 +83,7 @@ const Text: React.FC<TextProps> = ({
   variant,
   children,
   important,
+  size,
   ...props
 }) => {
   if (variant === "h1") return <H1 {...props}>{children}</H1>;
@@ -88,25 +98,25 @@ const Text: React.FC<TextProps> = ({
     return <Caption {...props}>{children}</Caption>;
   else if (variant === "primary")
     return (
-      <Primary {...props} important={important}>
+      <Primary {...props} important={important} size={size}>
         {children}
       </Primary>
     );
   else if (variant === "secondary")
     return (
-      <Secondary {...props} important={important}>
+      <Secondary {...props} important={important} size={size}>
         {children}
       </Secondary>
     );
   else if (variant === "tertiary")
     return (
-      <Tertiary {...props} important={important}>
+      <Tertiary {...props} important={important} size={size}>
         {children}
       </Tertiary>
     );
   else
     return (
-      <StyledText {...props} important={important}>
+      <StyledText {...props} important={important} size={size}>
         {children}
       </StyledText>
     );
