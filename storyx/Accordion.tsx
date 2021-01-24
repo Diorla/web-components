@@ -23,9 +23,18 @@ const slideUp = keyframes`
 `;
 
 export interface AccordionProps {
+  /**
+   * The part is always visible, used for toggling
+   */
   title: string;
+  /**
+   * The content is may be hidden
+   */
   children: React.ReactNode;
-  expanded: boolean;
+  /**
+   * initial state, whether it is open or closed
+   */
+  expanded?: boolean;
 }
 
 const Control = styled.div`
