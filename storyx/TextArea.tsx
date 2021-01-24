@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledTextArea = styled.textarea`
-  border: 1px solid ${({ theme }) => theme.shade.distant};
+  border: 0.1rem solid ${({ theme }) => theme.shade.distant};
   width: 100%;
   resize: vertical;
   background: ${({ theme }) => theme.common.inverseColor}05;
@@ -10,7 +10,7 @@ const StyledTextArea = styled.textarea`
   font-family: ${({ theme }) => theme.font.family};
   font-size: 1.6rem;
   &:focus {
-    border: 1px solid ${({ theme }) => theme.shade.close};
+    border: 0.1rem solid ${({ theme }) => theme.shade.close};
     background: transparent;
   }
 `;

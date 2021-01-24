@@ -37,15 +37,15 @@ const Contribute = styled.div`
   display: flex;
   align-items: center;
   & > div {
-    margin-right: 16px;
+    margin-right: 1.6rem;
     display: flex;
     align-items: center;
   }
   & a:first-child {
-    margin-right: 4px;
+    margin-right: 0.4rem;
   }
   & a:last-child {
-    margin-left: 4px;
+    margin-left: 0.4rem;
   }
 `;
 
