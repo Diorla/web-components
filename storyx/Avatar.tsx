@@ -5,19 +5,22 @@ import { contrastColor } from "../utils/color-functions";
 export interface AvatarProps {
   src?: string;
   initials?: string;
-  size?: "small" | "medium" | "large";
+  size?: "smallest" | "small" | "medium" | "large" | "largest";
 }
 
 const avatarSize = {
-  small: "2.4rem",
-  medium: "2.8rem",
-  large: "3.2rem",
+  smallest: "2.4rem",
+  small: "2.8rem",
+  medium: "3.2rem",
+  large: "3.6rem",
+  largest: "7.2rem",
 };
+
 const StyledAvatar = styled.div<{ size: string }>`
   width: ${({ size }) => avatarSize[size]};
   height: ${({ size }) => avatarSize[size]};
   background-color: ${({ theme }) => theme.shade.medium};
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   text-align: center;
   border-radius: 50%;
   color: ${({ theme }) => contrastColor(theme.shade.medium)};

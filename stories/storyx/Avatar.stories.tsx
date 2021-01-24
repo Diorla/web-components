@@ -22,3 +22,33 @@ WithInitials.args = {
 };
 
 export const NoArgument = Template.bind({});
+
+export const smallest = Template.bind({});
+smallest.args = {
+  src: profile,
+  size: "smallest",
+};
+
+export const small = Template.bind({});
+small.args = {
+  src: profile,
+  size: "small",
+};
+
+export const medium = Template.bind({});
+medium.args = {
+  src: profile,
+  size: "medium",
+};
+
+export const large = Template.bind({});
+large.args = {
+  src: profile,
+  size: "large",
+};
+
+export const largest = Template.bind({});
+largest.args = {
+  src: profile,
+  size: "largest",
+};
