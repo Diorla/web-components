@@ -52,56 +52,39 @@ Caption.args = {
   variant: "caption",
 };
 
-export const Primary = Template.bind({});
-Primary.args = {
-  children: "Primary",
-  variant: "primary",
-};
+export const Colors = () => (
+  <div>
+    <Text>Default</Text>
+    <Text color="primary">Primary</Text>
+    <Text color="secondary">Secondary</Text>
+    <Text color="tertiary">Tertiary</Text>
+  </div>
+);
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  children: "Secondary",
-  variant: "secondary",
-};
+export const Sizes = () => (
+  <div>
+    <Text size="smallest">Smallest</Text>
+    <Text size="small">Small</Text>
+    <Text>Default</Text>
+    <Text size="large">Large</Text>
+    <Text size="largest">Largest</Text>
+  </div>
+);
 
-export const Tertiary = Template.bind({});
-Tertiary.args = {
-  children: "Tertiary",
-  variant: "tertiary",
-};
+export const Forms = () => (
+  <div>
+    <Text>Default</Text>
+    <Text form="capitalize">capitalize</Text>
+    <Text form="lowercase">LOWERCASE</Text>
+    <Text form="uppercase">uppercase</Text>
+  </div>
+);
 
-export const StyledText = Template.bind({});
-StyledText.args = {
-  children: "Default Text",
-};
-export const Smallest = Template.bind({});
-Smallest.args = {
-  children: "smallest",
-  size: "smallest",
-};
-export const Small = Template.bind({});
-Small.args = {
-  children: "small",
-  size: "small",
-};
-export const Medium = Template.bind({});
-Medium.args = {
-  children: "medium",
-  size: "medium",
-};
-export const Large = Template.bind({});
-Large.args = {
-  children: "large",
-  size: "large",
-};
-export const Largest = Template.bind({});
-Largest.args = {
-  children: "largest",
-  size: "largest",
-};
-
-export const Important = Template.bind({});
-Important.args = {
-  children: "Default Primary Secondary Tertiary",
-  important: true,
-};
+export const Weights = () => (
+  <div>
+    <Text weight="bold">Bold</Text>
+    <Text weight="bolder">Bolder</Text>
+    <Text>Default</Text>
+    <Text weight="lighter">Lighter</Text>
+  </div>
+);

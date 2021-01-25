@@ -90,7 +90,7 @@ export default function Comment({
     <StyledComment>
       <User>
         <Avatar src={profileImage} />
-        <Text variant="primary">{username}</Text>
+        <Text color="primary">{username}</Text>
       </User>
       <Content>{comment}</Content>
       <Controls>
@@ -99,7 +99,7 @@ export default function Comment({
             <Link>
               <LikeThumbs sentiment={sentiment} onClick={onClickLike} />
             </Link>
-            <Text variant="primary" size="small">
+            <Text color="primary" size="small">
               {likes}
             </Text>
             <Link>

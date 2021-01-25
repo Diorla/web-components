@@ -9,11 +9,16 @@ type variants =
   | "subtitle"
   | "subtext"
   | "caption"
-  | "primary"
-  | "secondary"
-  | "tertiary";
+  | "text";
 
-type sizes = "small" | "smallest" | "medium" | "large" | "largest";
+type sizes = "smallest" | "small" | "medium" | "large" | "largest";
+
+type colors = "common" | "primary" | "secondary" | "tertiary";
+
+type forms = "uppercase" | "capitalize" | "lowercase" | "none";
+
+type weights = "normal" | "bold" | "lighter" | "bolder";
+
 const fontSize = {
   smallest: "1.2rem",
   small: "1.4rem",
@@ -21,69 +26,93 @@ const fontSize = {
   large: "1.8rem",
   largest: "2rem",
 };
+
+const fontWeights = {
+  bold: 800,
+  bolder: 600,
+  normal: 400,
+  lighter: 300,
+};
 export interface TextProps {
+  /**
+   * One of the various typography
+   */
   variant?: variants;
-  important?: boolean;
-  children: React.ReactNode;
+  /**
+   * Applies only to `<Text/>`, set different sizes
+   */
   size?: sizes;
+  /**
+   * Text-transform `<Text/>`
+   */
+  form?: forms;
+  /**
+   * Change `<Text/>` color
+   */
+  color?: colors;
+  /**
+   * Changes `<Text/>` boldness
+   */
+  weight?: weights;
+  children: React.ReactNode;
   [props: string]: any;
 }
 
 const header = styled.h1`
   font-weight: 400;
 `;
+
 export const H1 = styled(header)`
   font-size: 4rem;
 `;
+
 export const H2 = styled(header)`
   font-size: 3rem;
 `;
+
 export const H3 = styled(header)`
   font-size: 2.5rem;
 `;
+
 export const H4 = styled(header)`
   font-size: 2rem;
 `;
+
 export const Subtitle = styled.span`
   font-size: 1.4rem;
   color: ${({ theme }) => theme.shade.distant};
 `;
+
 export const Subtext = styled.span`
   font-style: italic;
   font-size: 1.4rem;
 `;
+
 export const Caption = styled.figcaption`
   font-size: 1.4rem;
 `;
-export const Primary = styled.div<{ important: boolean; size: sizes }>`
-  font-size: ${({ size = "medium" }) => fontSize[size]};
-  color: ${({ theme }) => theme.primary.color};
-  text-transform: ${({ important }) => (important ? "uppercase" : "initial")};
-  font-weight: ${({ important }) => (important ? 600 : "initial")};
-`;
-export const Secondary = styled.div<{ important: boolean; size: sizes }>`
-  font-size: ${({ size = "medium" }) => fontSize[size]};
-  color: ${({ theme }) => theme.secondary.color};
-  text-transform: ${({ important }) => (important ? "uppercase" : "initial")};
-  font-weight: ${({ important }) => (important ? 600 : "initial")};
-`;
-export const Tertiary = styled.div<{ important: boolean; size: sizes }>`
-  font-size: ${({ size = "medium" }) => fontSize[size]};
-  color: ${({ theme }) => theme.tertiary.color};
-  text-transform: ${({ important }) => (important ? "uppercase" : "initial")};
-  font-weight: ${({ important }) => (important ? 600 : "initial")};
-`;
-export const StyledText = styled.div<{ important: boolean; size: sizes }>`
-  font-size: ${({ size = "medium" }) => fontSize[size]};
-  text-transform: ${({ important }) => (important ? "uppercase" : "initial")};
-  font-weight: ${({ important }) => (important ? 600 : "initial")};
+
+export const StyledText = styled.div<{
+  size: sizes;
+  color: colors;
+  form: forms;
+  weight: weights;
+}>`
+  font-size: ${({ size }) => fontSize[size]};
+  color: ${({ theme, color }) =>
+    color === "common" ? theme[color].inverseColor : theme[color].color};
+  text-transform: ${({ form }) => form};
+  font-weight: ${({ weight }) => fontWeights[weight]};
 `;
 
 const Text: React.FC<TextProps> = ({
-  variant,
+  variant = "text",
   children,
   important,
-  size,
+  size = "medium",
+  form = "none",
+  weight = "normal",
+  color = "common",
   ...props
 }) => {
   if (variant === "h1") return <H1 {...props}>{children}</H1>;
@@ -96,27 +125,15 @@ const Text: React.FC<TextProps> = ({
     return <Subtext {...props}>{children}</Subtext>;
   else if (variant === "caption")
     return <Caption {...props}>{children}</Caption>;
-  else if (variant === "primary")
-    return (
-      <Primary {...props} important={important} size={size}>
-        {children}
-      </Primary>
-    );
-  else if (variant === "secondary")
-    return (
-      <Secondary {...props} important={important} size={size}>
-        {children}
-      </Secondary>
-    );
-  else if (variant === "tertiary")
-    return (
-      <Tertiary {...props} important={important} size={size}>
-        {children}
-      </Tertiary>
-    );
   else
     return (
-      <StyledText {...props} important={important} size={size}>
+      <StyledText
+        size={size}
+        form={form}
+        color={color}
+        weight={weight}
+        {...props}
+      >
         {children}
       </StyledText>
     );

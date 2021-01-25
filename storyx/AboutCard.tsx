@@ -30,7 +30,7 @@ const Card = styled.div`
 
 const AboutCard = ({ title, time }: AboutCardProps) => (
   <Card>
-    <Text variant="primary">{title}</Text>
+    <Text color="primary">{title}</Text>
     <Text variant="subtext">{time.toDateString()}</Text>
   </Card>
 );
