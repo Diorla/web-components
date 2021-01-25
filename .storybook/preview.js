@@ -29,15 +29,32 @@ export const parameters = {
   },
 };
 
+export const globalTypes = {
+  locale: {
+    name: "Locale",
+    description: "Change language",
+    defaultValue: "en",
+    toolbar: {
+      icon: "globe",
+      items: [
+        { value: "en", right: "🇺🇸", title: "English" },
+        { value: "fr", right: "🇫🇷", title: "Français" },
+        // { value: "es", right: "🇪🇸", title: "Español" },
+        // { value: "zh", right: "🇨🇳", title: "中文" },
+        // { value: "kr", right: "🇰🇷", title: "한국어" },
+      ],
+    },
+  },
+};
 const withThemeProvider = (Story, context) => {
   const {
     hooks: {
       currentContext: {
-        globals: { backgrounds },
+        globals: { backgrounds, locale },
       },
     },
   } = context;
-
+  console.log({ locale });
   const isDark = backgrounds && backgrounds.value === "#333333";
   const theme = storyxTheme(isDark);
   return (
