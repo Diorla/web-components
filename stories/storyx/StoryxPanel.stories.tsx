@@ -9,3 +9,7 @@ export default {
 } as Meta;
 
 export const Main = () => <StoryxPanel />;
+
+Main.parameters = {
+  controls: { hideNoControlsWarning: true },
+};

@@ -9,3 +9,7 @@ export default {
 } as Meta;
 
 export const Input = () => <TextArea rows={5} />;
+
+Input.parameters = {
+  controls: { hideNoControlsWarning: true },
+};

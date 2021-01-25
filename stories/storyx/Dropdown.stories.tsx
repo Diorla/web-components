@@ -26,3 +26,7 @@ export const StyledDropdown = () => (
     <div>This is the content</div>
   </div>
 );
+
+StyledDropdown.parameters = {
+  controls: { hideNoControlsWarning: true },
+};

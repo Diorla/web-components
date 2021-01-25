@@ -9,3 +9,7 @@ export default {
 } as Meta;
 
 export const StyledLogo = () => <Logo>Storyx</Logo>;
+
+StyledLogo.parameters = {
+  controls: { hideNoControlsWarning: true },
+};
