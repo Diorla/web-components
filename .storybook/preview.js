@@ -1,6 +1,5 @@
-//@ts-check
 import { ThemeProvider } from "styled-components";
-import React, { useState } from "react";
+import React from "react";
 import storyxTheme from "../storyx-theme";
 import Wrapper from "../storyx/Wrapper";
 
@@ -25,7 +24,7 @@ const withThemeProvider = (Story, context) => {
       },
     },
   } = context;
-  
+
   const isDark = backgrounds && backgrounds.value === "#333333";
   const theme = storyxTheme(isDark);
   return (
