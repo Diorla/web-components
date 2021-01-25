@@ -1,7 +1,10 @@
+//@ts-check
 import { ThemeProvider } from "styled-components";
 import React from "react";
 import storyxTheme from "../storyx-theme";
 import Wrapper from "../storyx/Wrapper";
+import { IntlProvider } from "react-intl";
+import dictionary from "../dictionary";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -39,6 +42,7 @@ export const globalTypes = {
       items: [
         { value: "en", right: "🇺🇸", title: "English" },
         { value: "fr", right: "🇫🇷", title: "Français" },
+        { value: "yo", right: "YO", title: "Yorùbá" },
         // { value: "es", right: "🇪🇸", title: "Español" },
         // { value: "zh", right: "🇨🇳", title: "中文" },
         // { value: "kr", right: "🇰🇷", title: "한국어" },
@@ -54,15 +58,21 @@ const withThemeProvider = (Story, context) => {
       },
     },
   } = context;
-  console.log({ locale });
+  
   const isDark = backgrounds && backgrounds.value === "#333333";
   const theme = storyxTheme(isDark);
   return (
-    <ThemeProvider theme={theme}>
-      <Wrapper>
-        <Story {...context} />
-      </Wrapper>
-    </ThemeProvider>
+    <IntlProvider
+      messages={dictionary[locale]}
+      locale={locale}
+      defaultLocale="en"
+    >
+      <ThemeProvider theme={theme}>
+        <Wrapper>
+          <Story {...context} />
+        </Wrapper>
+      </ThemeProvider>
+    </IntlProvider>
   );
 };
 export const decorators = [withThemeProvider];

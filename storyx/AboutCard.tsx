@@ -1,3 +1,5 @@
+import React from "react";
+import { FormattedDate } from "react-intl";
 import styled from "styled-components";
 import Text from "./Text";
 
@@ -31,7 +33,9 @@ const Card = styled.div`
 const AboutCard = ({ title, time }: AboutCardProps) => (
   <Card>
     <Text color="primary">{title}</Text>
-    <Text variant="subtext">{time.toDateString()}</Text>
+    <Text variant="subtext">
+      <FormattedDate value={time} year="numeric" month="short" day="2-digit" />
+    </Text>
   </Card>
 );
 
