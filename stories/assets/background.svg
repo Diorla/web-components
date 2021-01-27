@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <clipPath id="clip-Password_reset_1">
+      <rect width="1920" height="1080"/>
+    </clipPath>
+  </defs>
+  <g id="Password_reset_1" data-name="Password reset – 1" clip-path="url(#clip-Password_reset_1)">
+    <rect width="1920" height="1080" fill="#fefefe"/>
+    <rect id="Rectangle_70" data-name="Rectangle 70" width="1920" height="1080" fill="rgba(255,195,79,0.1)"/>
+    <ellipse id="Ellipse_29" data-name="Ellipse 29" cx="278" cy="222.5" rx="278" ry="222.5" transform="translate(-78 829)" fill="rgba(255,195,79,0.5)"/>
+    <ellipse id="Ellipse_30" data-name="Ellipse 30" cx="197.5" cy="234" rx="197.5" ry="234" transform="translate(-106 -189)" fill="rgba(255,114,69,0.5)"/>
+    <ellipse id="Ellipse_31" data-name="Ellipse 31" cx="328.5" cy="143.5" rx="328.5" ry="143.5" transform="translate(1263 908)" fill="rgba(100,118,255,0.5)"/>
+    <ellipse id="Ellipse_32" data-name="Ellipse 32" cx="262" cy="252.5" rx="262" ry="252.5" transform="translate(148 890)" fill="rgba(112,112,112,0.6)"/>
+    <path id="Path_250" data-name="Path 250" d="M202.5,0C314.338,0,405,74.992,405,167.5S314.338,335,202.5,335,0,260.008,0,167.5,90.662,0,202.5,0Z" transform="translate(-202 662)" fill="rgba(0,36,153,0.5)"/>
+    <ellipse id="Ellipse_34" data-name="Ellipse 34" cx="147" cy="205.5" rx="147" ry="205.5" transform="translate(1689 -44)" fill="rgba(149,102,0,0.5)"/>
+    <ellipse id="Ellipse_35" data-name="Ellipse 35" cx="259.5" cy="255" rx="259.5" ry="255" transform="translate(1506 654)" fill="rgba(147,0,0,0.5)"/>
+    <ellipse id="Ellipse_36" data-name="Ellipse 36" cx="151" cy="190.5" rx="151" ry="190.5" transform="translate(-44 48)" fill="rgba(142,80,82,0.5)"/>
+    <path id="Path_251" data-name="Path 251" d="M298.328,25.9C273.8,400.406,554,100.512,554,224.5S429.983,449,277,449,0,348.488,0,224.5,322.854-348.6,298.328,25.9Z" transform="translate(960 202.6)" fill="rgba(203,64,25,0.5)"/>
+    <path id="Polygon_1" data-name="Polygon 1" d="M192.292,137.68c7.533-33.235,54.883-33.235,62.417,0l34.473,152.083a32,32,0,0,0,4.89,11.129L394.185,445.638c17.307,25.023-6.784,57.8-35.833,48.756L233.014,455.363a32,32,0,0,0-19.029,0L88.648,494.394C59.6,503.44,35.508,470.661,52.815,445.638L152.929,300.891a32,32,0,0,0,4.89-11.129Z" transform="translate(325 161)" fill="rgba(51,51,51,0.5)"/>
+  </g>
+</svg>

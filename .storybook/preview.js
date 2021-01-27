@@ -4,7 +4,7 @@ import React from "react";
 import storyxTheme from "../storyx-theme";
 import Wrapper from "../storyx/Wrapper";
 import { IntlProvider } from "react-intl";
-import dictionary from "../dictionary";
+import language from "../language";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -58,12 +58,12 @@ const withThemeProvider = (Story, context) => {
       },
     },
   } = context;
-  
+
   const isDark = backgrounds && backgrounds.value === "#333333";
   const theme = storyxTheme(isDark);
   return (
     <IntlProvider
-      messages={dictionary[locale]}
+      messages={language[locale]}
       locale={locale}
       defaultLocale="en"
     >
