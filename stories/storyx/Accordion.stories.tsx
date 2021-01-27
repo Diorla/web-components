@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 
 import Accordion, { AccordionProps } from "../../storyx/Accordion";
+import { FormattedMessage } from "react-intl";
 
 export default {
   title: "Storyx/Accordion",
@@ -13,12 +14,18 @@ const Template: Story<AccordionProps> = (args) => <Accordion {...args} />;
 export const Closed = Template.bind({});
 Closed.args = {
   expanded: false,
-  title: "Click here",
+  title: <FormattedMessage id="clickHere" />,
   children: (
     <ol>
-      <li>One: Ookan</li>
-      <li>Two: Eeji</li>
-      <li>Three: Eeta</li>
+      <li>
+        <FormattedMessage id="one" />
+      </li>
+      <li>
+        <FormattedMessage id="two" />
+      </li>
+      <li>
+        <FormattedMessage id="three" />
+      </li>
     </ol>
   ),
 };
@@ -26,13 +33,10 @@ Closed.args = {
 export const Open = Template.bind({});
 Open.args = {
   expanded: true,
-  title: "Click here",
+  title: <FormattedMessage id="clickHere" />,
   children: (
     <div>
-      Eiusmod dolor non enim deserunt anim labore do do dolor aute. Magna sit
-      cupidatat laboris proident ex. Anim est cupidatat qui consequat ea. Quis
-      est sit qui non. Consequat do nulla consequat in nostrud quis aute irure
-      consectetur velit reprehenderit.
+      <FormattedMessage id="lorem" />
     </div>
   ),
 };
