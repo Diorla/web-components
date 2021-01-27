@@ -5,4 +5,5 @@ export default {
   two: "eji",
   three: "eta",
   lorem: "Isọkusọ leyi, tabi, ọrọ idinwon kan",
+  download: "Gba lati",
 };

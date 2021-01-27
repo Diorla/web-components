@@ -5,4 +5,5 @@ export default {
   two: "deux",
   three: "trois",
   lorem: "C'est pas n'importe quoi ou plutôt un faux texte",
+  download: "Télécharger de",
 };

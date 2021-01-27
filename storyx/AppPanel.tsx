@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import playstore from "../stories/assets/playstore.svg";
 import { AiOutlineApple } from "react-icons/ai";
+import { FormattedMessage } from "react-intl";
 
 const StyledDiv = styled.a`
   display: flex;
@@ -38,8 +39,8 @@ const AppPanel = ({ store, link }: AppPanelProps) => (
       {store === "appstore" ? <AppStore /> : <StyledImage src={playstore} />}
     </div>
     <div>
-      <div>Get it on</div>
-      <div>{store === "appstore" ? "Google PLAY" : "APPLE STORE"}</div>
+      <FormattedMessage id="download" />
+      <div>{store === "appstore" ? "APPLE STORE" : "Google PLAY"}</div>
     </div>
   </StyledDiv>
 );
