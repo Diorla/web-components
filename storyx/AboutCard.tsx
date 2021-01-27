@@ -20,13 +20,13 @@ const Card = styled.div`
   border-radius: 2.4rem;
   text-align: center;
   cursor: pointer;
-  border: 1px solid transparent;
+  border: 0.1rem solid transparent;
   &:hover {
     box-shadow: 0 0 0.2rem;
   }
   &:active {
     box-shadow: none;
-    border: 1px solid silver;
+    border: 0.1rem solid silver;
   }
 `;
 
