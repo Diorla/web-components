@@ -1,5 +1,7 @@
 import { FaLock } from "react-icons/fa";
+import { FormattedDate } from "react-intl";
 import styled from "styled-components";
+import Text from "./Text";
 
 export interface ChapterCardProps {
   title: string;
@@ -16,7 +18,6 @@ const Wrapper = styled.div`
   justify-content: space-between;
   padding: 0.6rem;
   font-size: 1.4rem;
-  color: ${({ theme }) => theme.primary.color};
   background: ${({ theme }) => theme.common.color};
 `;
 
@@ -33,19 +34,33 @@ const End = styled.div`
   display: flex;
 `;
 
-const DateDiv = styled.div`
-  color: ${({ theme }) => theme.primary.light};
+const Start = styled.div`
+  width: 1.5rem;
 `;
-
 const ChapterCard = ({ title, index, date, accessible }: ChapterCardProps) => {
   return (
     <Wrapper>
-      <div>{index}</div>
+      <Start>
+        <Text color="primary" size="medium" weight="bolder">
+          {index}
+        </Text>
+      </Start>
       <Center>
-        <div>{title}</div>
-        <DateDiv>{date.toDateString()}</DateDiv>
+        <Text color="primary" size="medium" weight="bolder">
+          {title}
+        </Text>
+        <Text color="primary" size="small">
+          <FormattedDate
+            value={date}
+            year="numeric"
+            month="short"
+            day="2-digit"
+          />
+        </Text>
       </Center>
-      <End>{!accessible && <FaLock />}</End>
+      <End>
+        <Text color="primary">{!accessible && <FaLock />}</Text>
+      </End>
     </Wrapper>
   );
 };
