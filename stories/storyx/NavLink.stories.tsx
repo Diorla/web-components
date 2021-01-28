@@ -16,12 +16,6 @@ Primary.args = {
   variant: "primary",
 };
 
-export const Underlined = Template.bind({});
-Underlined.args = {
-  children: "Underlined",
-  underlined: true,
-};
-
 export const Secondary = Template.bind({});
 Secondary.args = {
   children: "Secondary",
@@ -32,6 +26,12 @@ export const Tertiary = Template.bind({});
 Tertiary.args = {
   children: "Tertiary",
   variant: "tertiary",
+};
+
+export const Underlined = Template.bind({});
+Underlined.args = {
+  children: "Underlined",
+  underlined: true,
 };
 
 export const Success = Template.bind({});
