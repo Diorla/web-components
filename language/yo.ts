@@ -8,4 +8,5 @@ export default {
   download: "Gba lati",
   title: "Akọle",
   report: "Fẹjọsun",
+  placeholder: "Kọ ọrọ si ibiyi",
 };

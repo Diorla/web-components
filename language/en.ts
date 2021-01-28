@@ -8,4 +8,5 @@ export default {
   download: "Get it on",
   title: "The title",
   report: "Report",
+  placeholder: "Enter text here",
 };
