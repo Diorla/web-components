@@ -9,9 +9,11 @@ import {
   FaThumbsDown,
   FaThumbsUp,
 } from "react-icons/fa";
+import { FormattedMessage } from "react-intl";
 
 const StyledComment = styled.div`
   font-size: 1.2rem;
+  width: clamp(240px, 90%, 480px);
 `;
 
 const User = styled.div`
@@ -23,7 +25,7 @@ const User = styled.div`
 `;
 
 const Content = styled.div`
-  margin-left: 3rem;
+  margin: 0.4rem 0 0.4rem 3rem;
 `;
 
 const Controls = styled.div`
@@ -89,8 +91,10 @@ export default function Comment({
   return (
     <StyledComment>
       <User>
-        <Avatar src={profileImage} />
-        <Text color="primary">{username}</Text>
+        <Avatar src={profileImage} size="smallest" />
+        <Text color="primary" weight="bolder">
+          {username}
+        </Text>
       </User>
       <Content>{comment}</Content>
       <Controls>
@@ -110,7 +114,9 @@ export default function Comment({
             {replies} <FaRegComment onClick={onClickComment} />
           </Link>
         </Contribute>
-        <Link onClick={onClickReport}>Report</Link>
+        <Link onClick={onClickReport}>
+          <FormattedMessage id="report" />
+        </Link>
       </Controls>
     </StyledComment>
   );

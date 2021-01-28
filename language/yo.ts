@@ -6,4 +6,6 @@ export default {
   three: "eta",
   lorem: "Isọkusọ leyi, tabi, ọrọ idinwon kan",
   download: "Gba lati",
+  title: "Akọle",
+  report: "Fẹjọsun",
 };

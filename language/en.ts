@@ -6,4 +6,6 @@ export default {
   three: "three",
   lorem: "This is nonsense or rather, a dummy text",
   download: "Get it on",
+  title: "The title",
+  report: "Report",
 };
