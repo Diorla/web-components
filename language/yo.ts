@@ -9,4 +9,5 @@ export default {
   title: "Akọle",
   report: "Fẹjọsun",
   placeholder: "Kọ ọrọ si ibiyi",
+  search: "Kini on wa",
 };

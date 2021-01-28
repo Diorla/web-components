@@ -9,4 +9,5 @@ export default {
   title: "Le titre",
   report: "Dénoncer",
   placeholder: "Écrire ici",
+  search: "Chercher",
 };

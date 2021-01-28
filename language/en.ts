@@ -9,4 +9,5 @@ export default {
   title: "The title",
   report: "Report",
   placeholder: "Enter text here",
+  search: "Search here",
 };
