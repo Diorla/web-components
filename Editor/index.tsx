@@ -56,7 +56,15 @@ const StyledDiv = styled.div<{ hasStyle: boolean }>`
   }
 `;
 
-const Editor = () => {
+export interface EditorProps {
+  blockStyles?: string[];
+  inlineStyles?: string[];
+}
+
+const Editor = ({ blockStyles, inlineStyles }: EditorProps) => {
+  const blocks = blockStyles || BLOCK_TYPES.map((item) => item.style);
+  const inlines = inlineStyles || INLINE_STYLES.map((item) => item.style);
+
   const [editorState, setEditorState] = useState(() =>
     EditorState.createEmpty()
   );
@@ -85,33 +93,44 @@ const Editor = () => {
   return (
     <StyledDiv hasStyle={hasStyle}>
       <Toolbar>
-        {INLINE_STYLES.map((type, idx) => (
-          <Button
-            key={idx}
-            onClick={(e: any) => {
-              toggleInline(setEditorState, editorState, type.style, editorRef);
-              e.preventDefault();
-            }}
-            active={currentStyle.has(type.style)}
-            icon={type.label}
-          />
-        ))}
-        {BLOCK_TYPES.map((type, idx) => (
-          <Button
-            key={idx}
-            onClick={(e) => {
-              toggleBlockType(
-                setEditorState,
-                editorState,
-                type.style,
-                editorRef
-              );
-              e.preventDefault();
-            }}
-            active={type.style === blockType}
-            icon={type.label}
-          />
-        ))}
+        {INLINE_STYLES.map((type, idx) => {
+          if (inlines.includes(type.style))
+            return (
+              <Button
+                key={idx}
+                onClick={(e: any) => {
+                  toggleInline(
+                    setEditorState,
+                    editorState,
+                    type.style,
+                    editorRef
+                  );
+                  e.preventDefault();
+                }}
+                active={currentStyle.has(type.style)}
+                icon={type.label}
+              />
+            );
+        })}
+        {BLOCK_TYPES.map((type, idx) => {
+          if (blocks.includes(type.style))
+            return (
+              <Button
+                key={idx}
+                onClick={(e) => {
+                  toggleBlockType(
+                    setEditorState,
+                    editorState,
+                    type.style,
+                    editorRef
+                  );
+                  e.preventDefault();
+                }}
+                active={type.style === blockType}
+                icon={type.label}
+              />
+            );
+        })}
       </Toolbar>
       <DraftEditor
         editorState={editorState}
