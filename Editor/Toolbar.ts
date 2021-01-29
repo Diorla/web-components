@@ -6,8 +6,9 @@ const Toolbar = styled.div`
   align-items: flex-end;
   position: sticky;
   top: 0;
-  background-color: ${({ theme }) => theme.common.inverseColor}0a;
+  background-color: ${({ theme }) => theme.common.color};
   z-index: ${({ theme }) => theme.zIndex.appbar};
+  border-bottom: 1px solid ${({ theme }) => theme.shade.medium};
 `;
 
 export default Toolbar;
