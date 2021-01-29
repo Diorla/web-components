@@ -2,7 +2,7 @@ import styled from "styled-components";
 import variants from "./variants";
 
 export interface ModalProps {
-  children?: React.ReactNode;
+  children: React.ReactNode;
   variant: variants;
 }
 const Box = styled.div<ModalProps>`

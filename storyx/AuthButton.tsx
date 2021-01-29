@@ -54,7 +54,7 @@ const FacebookButton = ({ ...props }: { [props: string]: any }) => (
   </StyledFacebook>
 );
 
-const AuthButton = ({ type, ...props }: AuthButtonProps) => {
+const AuthButton = ({ type = "facebook", ...props }: AuthButtonProps) => {
   if (type === "google") return <GoogleButton {...props} />;
   return <FacebookButton {...props} />;
 };

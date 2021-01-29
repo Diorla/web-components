@@ -36,7 +36,7 @@ export const Coin = ({ value }: { value: number }) => (
   </Wrapper>
 );
 
-const Fund = ({ type, value }: FundProps) =>
+const Fund = ({ type = "coin", value }: FundProps) =>
   type === "gem" ? <Gem value={value} /> : <Coin value={value} />;
 
 export default Fund;

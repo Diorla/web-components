@@ -33,7 +33,7 @@ export interface AppPanelProps {
   link: string;
 }
 
-const AppPanel = ({ store, link }: AppPanelProps) => (
+const AppPanel = ({ store = "playstore", link }: AppPanelProps) => (
   <StyledDiv href={link}>
     <div>
       {store === "appstore" ? <AppStore /> : <StyledImage src={playstore} />}

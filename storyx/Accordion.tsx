@@ -49,7 +49,7 @@ const Wrapper = styled.div<{ expanded: boolean; loaded: boolean }>`
   animation: ${({ expanded }) => (expanded ? slideDown : slideUp)}
     ${({ theme, loaded }) => loaded && theme.duration.standard} linear forwards;
 `;
-const Accordion = ({ title, children, expanded }: AccordionProps) => {
+const Accordion = ({ title, children, expanded = false }: AccordionProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [loaded, setLoaded] = useState(false);
   useEffect(() => {

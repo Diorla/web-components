@@ -27,7 +27,7 @@ export const Instagram = styled(AiFillInstagram)`
   color: #f95146;
 `;
 
-const SocialIcon = ({ social, ...props }: SocialIconProps) => {
+const SocialIcon = ({ social = "twitter", ...props }: SocialIconProps) => {
   if (social === "facebook") return <Facebook {...props} />;
   else if (social === "whatsapp") return <Whatsapp {...props} />;
   else if (social === "instagram") return <Instagram {...props} />;
@@ -36,7 +36,4 @@ const SocialIcon = ({ social, ...props }: SocialIconProps) => {
 
 export default SocialIcon;
 
-//facebook: #3B5998
-//twitter: #03A9F4
-//whatsapp: #4CAF50
 //instagram: #4E5BC9 #F95146 #FF9E49

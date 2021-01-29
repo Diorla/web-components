@@ -30,12 +30,9 @@ const StyledAvatar = styled.div<{ size: string }>`
   justify-content: center;
 `;
 
-const Avatar = ({ src, initials, size = "medium" }: AvatarProps) => {
+const Avatar = ({ src, initials = "SX", size = "medium" }: AvatarProps) => {
   if (src) return <StyledAvatar as="img" src={src} size={size} />;
-  else if (initials) {
-    return <StyledAvatar size={size}>{initials.slice(0, 2)}</StyledAvatar>;
-  }
-  return <StyledAvatar size={size}>SX</StyledAvatar>;
+  return <StyledAvatar size={size}>{initials.slice(0, 2)}</StyledAvatar>;
 };
 
 export default Avatar;

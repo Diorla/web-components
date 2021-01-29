@@ -68,7 +68,7 @@ export interface CommentProps {
   profileImage?: string;
   username: string;
   comment: string;
-  sentiment: "like" | "dislike" | undefined;
+  sentiment?: "like" | "dislike" | "indifferent";
   likes: number;
   replies: number;
   onClickLike: () => void;
@@ -80,13 +80,13 @@ export default function Comment({
   profileImage,
   username,
   comment,
-  sentiment,
   likes,
   replies,
   onClickLike,
   onClickDislike,
   onClickComment,
   onClickReport,
+  sentiment = "indifferent",
 }: CommentProps) {
   return (
     <StyledComment>
