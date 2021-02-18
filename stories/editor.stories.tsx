@@ -4,7 +4,7 @@ import { Story, Meta } from "@storybook/react/types-6-0";
 import Editor, { EditorProps } from "../Editor";
 
 export default {
-  title: "Editor",
+  title: "xyz/Editor",
   component: Editor,
 } as Meta;
 
